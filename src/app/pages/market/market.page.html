@@ -4,18 +4,19 @@
 			<ion-back-button></ion-back-button>
 		</ion-buttons>
 
-		<ion-title>Mercado</ion-title>
+		<ion-title>Market</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-searchbar placeholder="Filtrar mercadorias" debounce="500" (ionChange)="search($event.target.value)"></ion-searchbar>
+	<ion-searchbar placeholder="Filter products" debounce="500"
+					(ionChange)="search($event.target.value)" [value]="searchInput"></ion-searchbar>
 
 	<ion-card>
 		<ion-card-content>
 			<ion-grid>
 				<ion-row>
-					<ion-col size="4" *ngFor="let produto of produtos">
+					<ion-col size="4" *ngFor="let produto of produtosFiltrados">
 						<ion-card>
 							<div>
 								<img [src]="produto.img"/>

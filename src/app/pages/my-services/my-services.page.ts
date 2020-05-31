@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import { IProduct } from 'src/app/models/IProduct';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { UserService } from 'src/app/services/user/user.service';
 	styleUrls: ['./my-services.page.scss'],
 })
 export class MyServicesPage implements OnInit {
-	public servicos: Array<{ img: string, nome: string }>;
+	public searchInput: string;
+	public servicos: IProduct[];
 
 	constructor (
 		private navCtrl: NavController,
@@ -19,14 +21,30 @@ export class MyServicesPage implements OnInit {
 			this.navCtrl.navigateRoot(["/login"]);
 
 		this.servicos = [
-			{ img: "assets/imgs/plantio_white.png", nome: "Plantio" },
-			{ img: "assets/imgs/sementes_icon_white.png", nome: "Sementes" }
+			{ img: "assets/imgs/plantio_white.png", nome: "Planter", categoria: "Planting" },
+			{ img: "assets/imgs/sementes_icon_white.png", nome: "Seeds", categoria: "Seeds" }
 		];
 	}
 
 	ngOnInit () { }
 
-	search (value: string): void {
-		console.log(value);
+	search (input: string): void {
+		this.searchInput = input;
+	}
+
+	get servicosFiltrados (): IProduct[] {
+		if (!this.searchInput)
+			return this.servicos;
+
+		return this.servicos.filter((servico: IProduct) => {
+			console.log(servico, this.searchInput);
+			if (servico.nome.toLowerCase().indexOf(this.searchInput.toLowerCase()) > -1)
+				return true;
+
+			if (servico.categoria.toLowerCase().indexOf(this.searchInput.toLowerCase()) > -1)
+				return true;
+
+			return false;
+		});
 	}
 }

@@ -18,6 +18,16 @@ ion-content > ion-card > ion-card-header {
 	ion-card-header {
 		--background: #9E4643;
 	}
+
+	ion-card-content {
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 0;
+
+		ion-text.d-b {
+			margin-bottom: 5px
+		}
+	}
 }
 
 #market {
@@ -76,5 +86,24 @@ ion-content > ion-card > ion-card-header {
 				margin-right: 2%;
 			}
 		}
+	}
+}
+
+.center {
+	width: 100%;
+	text-align: center;
+}
+
+.chart-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+
+	.chart {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		// width: 100%;
+		// height: 100px;
 	}
 }

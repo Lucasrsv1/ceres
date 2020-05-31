@@ -1,0 +1,9 @@
+ion-content.ios iframe {
+	width: 100vw;
+	height: calc(100vh - 68px);
+}
+
+ion-content.md iframe {
+	width: 100vw;
+	height: calc(100vh - 80px);
+}

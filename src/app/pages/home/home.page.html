@@ -4,29 +4,52 @@
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
 
-		<ion-title>Início</ion-title>
+		<ion-title>Home</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
 	<ion-card id="info">
 		<ion-card-header>
-			<ion-card-title>Informações</ion-card-title>
+			<ion-card-title>Information</ion-card-title>
 		</ion-card-header>
 
 		<ion-card-content>
+			<ion-grid>
+				<ion-row>
+					<ion-col size="6">
+						<ion-text class="fs-l d-b center">Humidity</ion-text>
+						<div class="chart-container">
+							<div echarts [options]="humidityOpts" class="chart"></div>
+						</div>
+					</ion-col>
+					<ion-col size="6">
+						<ion-text class="fs-l d-b center">Temperature</ion-text>
+						<div class="chart-container">
+							<div echarts [options]="tempOpts" class="chart"></div>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row *ngIf="infoClima">
+					<ion-col size="12" class="pt-0">
+						<ion-text class="d-b">{{ infoClima.results.city }}</ion-text>
+						<ion-text class="d-b">{{ infoClima.results.description }}</ion-text>
+						<ion-text>Min: {{ infoClima.results.forecast[0].min }} °C | Max: {{ infoClima.results.forecast[0].max }} °C</ion-text>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
 		</ion-card-content>
 	</ion-card>
 
 	<ion-card id="market">
 		<ion-card-header>
-			<ion-card-title>Mercado</ion-card-title>
+			<ion-card-title>Market</ion-card-title>
 		</ion-card-header>
 
 		<ion-card-content>
-			<ion-text class="label">Alimentos</ion-text>
+			<ion-text class="label">Food</ion-text>
 			<div class="scroll">
-				<ion-card *ngFor="let alimento of alimentos">
+				<ion-card *ngFor="let alimento of alimentos" (click)="openMarket(alimento.nome)">
 					<div>
 						<img [src]="alimento.img"/>
 						<ion-card-header>
@@ -36,9 +59,9 @@
 				</ion-card>
 			</div>
 
-			<ion-text class="label">Serviços</ion-text>
+			<ion-text class="label">Services</ion-text>
 			<div class="scroll">
-				<ion-card *ngFor="let servico of servicos">
+				<ion-card *ngFor="let servico of servicos" (click)="openMarket(servico.nome)">
 					<div>
 						<img [src]="servico.img"/>
 						<ion-card-header>

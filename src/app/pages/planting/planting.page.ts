@@ -21,24 +21,24 @@ export class PlantingPage implements OnInit {
 
 		this.plantas = [{
 			img: "assets/imgs/tomate_cereja.jpg",
-			nome: "Tomate Cereja",
-			descricao: "Excelente para plantar em vasos pequenos."
+			nome: "Cherry Tomato",
+			descricao: "Excellent for planting in small pots."
 		}, {
 			img: "assets/imgs/hortela.jpeg",
-			nome: "Hortelã",
-			descricao: "Erva de aroma único e acrescenta uma mistura de frescor aos pratos."
+			nome: "Mint",
+			descricao: "This herb has a unique scent and adds a fresh taste to dishes."
 		}, {
 			img: "assets/imgs/alface.png",
-			nome: "Alface",
-			descricao: "A alface é uma das folhas mais fáceis de se plantar dentro de casa."
+			nome: "Lettuce",
+			descricao: "Lettuce is one of the easiest leaves to plant indoors."
 		}, {
 			img: "assets/imgs/arroz.png",
-			nome: "Arroz",
-			descricao: "O arroz faz parte de quase todo prato brasileiro."
+			nome: "Rice",
+			descricao: "Rice is part of almost every brazilian dish."
 		}, {
 			img: "assets/imgs/cafe.png",
-			nome: "Café",
-			descricao: "Necessita de umidade e luz constante."
+			nome: "Coffee",
+			descricao: "It needs constant light and humidity."
 		}]
 	}
 

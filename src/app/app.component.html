@@ -14,7 +14,7 @@
 						</ion-avatar>
 					</div>
 					<span *ngIf="usuarioLogado">
-						<h2 class="truncate">Bem vindo!</h2>
+						<h2 class="truncate">Welcome!</h2>
 						<p class="truncate">{{ usuarioLogado.email }}</p>
 					</span>
 				</div>
@@ -38,27 +38,27 @@
 						</ion-item>
 					</ion-menu-toggle>
 
-					<ion-list-header>Informações</ion-list-header>
+					<ion-list-header>Information</ion-list-header>
 
 					<ion-menu-toggle auto-hide="false" *ngFor="let info of informacoes">
-						<ion-item (click)="openInfo(info)" routerDirection="root"
+						<ion-item (click)="openInfo(info.url)" routerDirection="root"
 								  [routerLink]="[]" lines="none" detail="false">
 							<ion-icon slot="start" name="bookmark-outline"></ion-icon>
-							<ion-label>{{ info }}</ion-label>
+							<ion-label>{{ info.nome }}</ion-label>
 						</ion-item>
 					</ion-menu-toggle>
 
-					<ion-list-header>Mercado</ion-list-header>
+					<ion-list-header>Market</ion-list-header>
 
 					<div class="btns">
 						<ion-button expand="block" (click)="openMyProductsAndServices(true)">
-							<img src="assets/imgs/vegetabals_icon.png" slot="start"> Meus Produtos
+							<img src="assets/imgs/vegetabals_icon.png" slot="start"> My Products
 						</ion-button>
 						<ion-button expand="block" (click)="openMyProductsAndServices(false)">
-							<ion-icon name="hammer-outline" slot="start"></ion-icon> Meus Serviços
+							<ion-icon name="hammer-outline" slot="start"></ion-icon> My Services
 						</ion-button>
 						<ion-button expand="block" (click)="menu.close()" routerDirection="forward" [routerLink]="['market']">
-							<ion-icon name="search-outline" slot="start"></ion-icon> Buscar
+							<ion-icon name="search-outline" slot="start"></ion-icon> Search
 						</ion-button>
 					</div>
 				</ion-list>

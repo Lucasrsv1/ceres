@@ -46,9 +46,13 @@ ion-col ion-card {
 
 			ion-card-subtitle {
 				background: #f8ba29;
-				padding: 3px 0;
+				padding: 0 0 5px 0;
 				color: white;
-				margin-top: 3px;
+				margin-top: 2px;
+			}
+
+			ion-card-subtitle.ios {
+				padding: 2px 0 5px 0;
 			}
 		}
 	}

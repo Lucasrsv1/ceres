@@ -31,7 +31,9 @@
     "@types/jwt-decode": "^2.2.1",
     "cordova-android": "^8.1.0",
     "core-js": "^2.5.4",
+    "echarts": "^4.8.0",
     "js-sha512": "^0.8.0",
+    "ngx-echarts": "^5.0.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

@@ -15,18 +15,24 @@ import { UserService } from './services/user/user.service';
 export class AppComponent implements OnInit {
 	public selectedIndex = 0;
 	public appPages = [{
-		title: "Início",
+		title: "Home",
 		url: "/home",
 		icon: "home",
 		direction: "root"
 	}, {
-		title: "Como Plantar",
+		title: "How to Plant",
 		url: "/planting",
 		icon: "leaf",
 		direction: "forward"
 	}];
 
-	public informacoes: string[] = ["Dado 1", "Dado 2", "Dado 3", "Dado 4"];
+	public informacoes = [{
+		url: "/climate-rain",
+		nome: "Climate and Rain"
+	}, {
+		url: "/clouds-weather",
+		nome: "Clouds and Weather"
+	}];
 
 	constructor (
 		private menu: MenuController,
@@ -70,11 +76,8 @@ export class AppComponent implements OnInit {
 		this.selectedIndex = this.appPages.findIndex(page => page.url === path);
 	}
 
-	openInfo (info: string): void {
-		this.navCtrl.navigateRoot(["informacoes"], {
-			queryParams: { info }
-		});
-
+	openInfo (infoUrl: string): void {
+		this.navCtrl.navigateForward([infoUrl]);
 		this.menu.close();
 	}
 

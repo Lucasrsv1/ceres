@@ -12,22 +12,22 @@
 	<div class="ion-padding pt-0 form-container">
 		<form (submit)="login()" #formulario="ngForm" [formGroup]="loginForm">
 			<ion-item>
-				<ion-input name="email" type="email" formControlName="email" placeholder="Digite seu e-mail" autofocus="true"></ion-input>
+				<ion-input name="email" type="email" formControlName="email" placeholder="Enter your email" autofocus="true"></ion-input>
 			</ion-item>
 			<input-error [show]="!loginForm.controls.email.valid && submitAttempt">
-				Por favor, digite um e-mail válido.
+				Please, enter a valid email.
 			</input-error>
 
 			<ion-item>
-				<ion-input name="senha" type="password" formControlName="senha" placeholder="Digite sua senha"></ion-input>
+				<ion-input name="senha" type="password" formControlName="senha" placeholder="Enter your password"></ion-input>
 			</ion-item>
 			<input-error [show]="!loginForm.controls.senha.valid && submitAttempt">
-				Este campo é obrigatório.
+				This field is required.
 			</input-error>
 
 			<div class="login-btn pl-0">
 				<button type="submit" class="hidden">.</button>
-				<ion-button expand="block" type="submit" size="large">ENTRAR</ion-button>
+				<ion-button expand="block" type="submit" size="large">LOGIN</ion-button>
 			</div>
 		</form>
 	</div>

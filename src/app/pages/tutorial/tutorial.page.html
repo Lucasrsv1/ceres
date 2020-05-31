@@ -10,28 +10,33 @@
 
 <ion-content>
 	<ion-card>
-		<ion-card-content>
-			<ion-text>Tomate um pouco menor que o convencional e de sabor mais adocicado.</ion-text>
+		<ion-card-content *ngIf="!planta || planta.nome != 'Cherry Tomato'">
+			<ion-text>Not implemented.</ion-text><br/>
+			<ion-text>Try the Cherry Tomato.</ion-text>
+		</ion-card-content>
+
+		<ion-card-content *ngIf="planta && planta.nome == 'Cherry Tomato'">
+			<ion-text>Tomatoes slightly smaller than the conventional and with a sweeter flavor.</ion-text>
 			<ion-img src="assets/imgs/tomate_cereja.jpg" alt="Tomate"></ion-img>
 
 			<ion-text>
-				<strong>Como Realizar o Plantio</strong>
+				<strong>How to Perform Planting</strong>
 			</ion-text>
 
-			<ion-text>Deixe a terra bem fofa e faça pequenos furos com o dedo.</ion-text>
-			<ion-text>Insira as sementes e polvilhe a terra por cima.</ion-text>
-			<ion-img src="assets/imgs/tutorial_tomate/buraco_na_terra.png" alt="Buraco na terra"></ion-img>
+			<ion-text>Make the earth very soft and make small holes with your finger.</ion-text>
+			<ion-text>Insert the seeds and sprinkle the soil on top.</ion-text>
+			<ion-img src="assets/imgs/tutorial_tomate/buraco_na_terra.png" alt="Hole on earth"></ion-img>
 
-			<ion-text>Até as mudas nascerem e estiverem pequenas regue uma vez ao dia pela manhã. Quando o tomateiro estiver mais firme regue três vezes por semana.</ion-text>
-			<ion-img src="assets/imgs/tutorial_tomate/muda_tomate.png" alt="Muda de tomate"></ion-img>
+			<ion-text>Until the seedlings are born and are small, water once a day in the morning.</ion-text>
+			<ion-img src="assets/imgs/tutorial_tomate/muda_tomate.png" alt="Tomato seedlings"></ion-img>
 
-			<ion-text>Até as mudas nascerem e estiverem pequenas regue uma vez ao dia pela manhã. Quando o tomateiro estiver mais firme regue três vezes por semana.</ion-text>
-			<ion-img src="assets/imgs/tutorial_tomate/regador.png" alt="Regador"></ion-img>
+			<ion-text>When the tomato is firmer, water three times a week.</ion-text>
+			<ion-img src="assets/imgs/tutorial_tomate/regador.png" alt="Watering can"></ion-img>
 
-			<ion-text>O caule do tomateira não suporta o próprio peso, coloque uma estaca na terra e conforme ele for crescendo amarre para dar sustentação.</ion-text>
-			<ion-img src="assets/imgs/tutorial_tomate/sustentacao.png" alt="Sustentação"></ion-img>
+			<ion-text>The tomato stem does not support its own weight, put a stake in the ground and, as it grows, tie it to support it.</ion-text>
+			<ion-img src="assets/imgs/tutorial_tomate/sustentacao.png" alt="Support"></ion-img>
 
-			<ion-text>O tomate cereja deverá receber ao menos 4 horas diárias de sol.</ion-text>
+			<ion-text>Cherry tomatoes should receive at least 4 hours of sunshine daily.</ion-text>
 		</ion-card-content>
 	</ion-card>
 </ion-content>

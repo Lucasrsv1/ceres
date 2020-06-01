@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
 	}];
 
 	constructor (
-		private menu: MenuController,
+		public menu: MenuController,
 		private platform: Platform,
 		private splashScreen: SplashScreen,
 		private statusBar: StatusBar,

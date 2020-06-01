@@ -37,7 +37,6 @@ export class MyServicesPage implements OnInit {
 			return this.servicos;
 
 		return this.servicos.filter((servico: IProduct) => {
-			console.log(servico, this.searchInput);
 			if (servico.nome.toLowerCase().indexOf(this.searchInput.toLowerCase()) > -1)
 				return true;
 

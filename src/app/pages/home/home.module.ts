@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 import { HomePage } from './home.page';
 
@@ -12,7 +13,7 @@ import { HomePage } from './home.page';
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		NgxEchartsModule
+		NgxEchartsModule.forRoot({ echarts }),
 	],
 	declarations: [HomePage]
 })
